@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base th:href="${#request.getContextPath() +'/'}"/>
+</head>
+<body>
+    <form action="/get/update" method="post">
+        <input type="hidden" name="id"   th:value="${student.id}"/>
+        姓名：<br/>
+        <input type="text" name="sname" th:placeholder="${student.sname}" />
+        性别：<br/>
+        <input type="text"  name="ssex" th:placeholder="${student.ssex}"/>
+        爱好:<br/>
+        <input  type="text" name="shobby" th:placeholder="${student.shobby}"/>
+        <input  type="submit" value="提交" />
+
+    </form>
+</body>
+</html>

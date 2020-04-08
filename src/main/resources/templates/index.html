@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base th:href="${#request.getContextPath() +'/'}"/>
+</head>
+<body>
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+</body>
+<p th:class="aaa">您来了？？？？？？???</p>
+<script>
+</script>
+<table border="1">
+    <tr>
+        <td>sname</td>
+        <td>spassword</td>
+        <td>ssex</td>
+        <td>shobby</td>
+        <td>scity</td>
+
+    </tr>
+<tr th:each="stu : ${stu}">
+    <td th:text="${stu.sname }"> </td></span>
+    <td th:text="${stu.password}"></td>
+    <td th:text="${stu.ssex}"></td>
+    <td th:text="${stu.shobby}"></td>
+    <td th:text="${stu.scity}"></td>
+    <td>
+        <a th:href="@{'/get/del/'+${stu.id}}">删除</a>|
+        <a th:href="@{'/get/qy/'+${stu.id}}">修改</a>
+    </td>
+
+</tr>
+
+
+</table>
+
+</html>
